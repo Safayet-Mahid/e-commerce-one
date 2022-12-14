@@ -9,13 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
     "bootstrap": "^5.2.3",
     "framer-motion": "^7.7.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.5",
+    "react-toastify": "^9.1.1",
     "reactstrap": "^9.1.5",
-    "remixicon": "^2.5.0"
+    "remixicon": "^2.5.0",
+    "toastify": "^2.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
