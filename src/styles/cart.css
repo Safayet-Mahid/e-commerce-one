@@ -1,0 +1,25 @@
+.table tr td img{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.table td i {
+    cursor: pointer;
+}
+
+.table tr{
+    /* vertical-align: center; */
+}
+.table td, .table th {
+    color: var(--primary-color);
+}
+
+.delete__btn{
+    border: none;
+    background: none;
+}
+
+.cart-section{
+    padding: 50px 0;
+}

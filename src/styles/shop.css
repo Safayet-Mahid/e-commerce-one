@@ -5,6 +5,7 @@
     border-radius: 5px;
     background-color: var(--primary-color);
     color: #fff;
+    margin-bottom: 20px;
  }
 
  .filter__widget select:focus{
@@ -50,5 +51,6 @@
       .filter__widget select {
          padding: 7px 20px;
          font-style: 0.9rem;
+         
       }
  }
