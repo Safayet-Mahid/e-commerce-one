@@ -137,6 +137,7 @@ const Header = () => {
                     <div className="d-flex flex-column align-items-center justify-content-center ">
                       <Link to="/signup">Signup</Link>
                       <Link to="/login">Login</Link>
+                      <Link to="/dashboard">Dashboard</Link>
                     </div>
                   )}
                 </div>

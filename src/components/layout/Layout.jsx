@@ -1,21 +1,23 @@
-
-
-
-import React from 'react'
-import Footer from '../footer/Footer'
-import Header from '../header/Header'
-import Routers from '../../routers/Routers'
+import React from "react";
+import Footer from "../footer/Footer";
+import Header from "../header/Header";
+import Routers from "../../routers/Routers";
+import { useLocation } from "react-router-dom";
+import AdminNav from "../../admin/AdminNav";
 
 const Layout = () => {
+  const location = useLocation();
+
   return (
     <>
-        <Header/>
-            <div>
-                <Routers/>
-            </div>
-        <Footer/>
-    </>
-  )
-}
+      {location.pathname.startsWith("/dashboard") ? <AdminNav /> : <Header />}
 
-export default Layout
+      <div>
+        <Routers />
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export default Layout;
