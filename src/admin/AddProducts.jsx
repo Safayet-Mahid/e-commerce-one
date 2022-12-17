@@ -21,7 +21,7 @@ const AddProducts = () => {
     setLoading(true);
 
     const product = {
-      title,
+      productName: title,
       shortDesc,
       description,
       imgUrl: productImg,
@@ -123,6 +123,7 @@ const AddProducts = () => {
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
                       >
+                        <option>Select category</option>
                         <option value="chair">Chair</option>
                         <option value="sofa">sofa</option>
                         <option value="mobile">Mobile</option>
