@@ -1,5 +1,5 @@
 import { deleteDoc, doc } from "firebase/firestore";
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/allproduct.css";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -11,9 +11,16 @@ const AllProducts = () => {
   const { data: productsData, loading } = useGetData("products");
 
   const deleteProduct = async (id) => {
-    await deleteDoc(doc(db, "products", id));
+    // await deleteDoc(doc(db, "products", id));
     toast.success("Deleted!");
   };
+
+  useEffect(() => {
+    const deleteProduct = async (id) => {
+      // await deleteDoc(doc(db, "products", id));
+      toast.success("Deleted!");
+    };
+  }, [productsData]);
 
   return (
     <section>

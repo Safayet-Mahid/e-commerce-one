@@ -10,7 +10,7 @@ const Users = () => {
   const { data: usersData, loading } = useGetData("users");
 
   const deleteUser = async (id) => {
-    await deleteDoc(doc(db, "users", id));
+    // await deleteDoc(doc(db, "users", id));
     toast.success("Deleted!");
   };
   return (
