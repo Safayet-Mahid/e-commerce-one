@@ -15,18 +15,20 @@ import { toast } from "react-toastify";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase.config";
 
+import useGetData from "../custom-hooks/useGetData";
+
 const ProductDetails = () => {
   const { data: products } = useGetData("products");
 
   const [tab, setTab] = useState("desc");
   const [rating, setRating] = useState(null);
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState({});
 
   const reviewUser = useRef("");
   const reviewMsg = useRef("");
 
   const { id } = useParams();
-  // const product = products.find(item=>item.id===id)
+  // const product = products.find((item) => item.id === id);
 
   const docRef = doc(db, "products", id);
 
@@ -42,7 +44,7 @@ const ProductDetails = () => {
     };
 
     getProduct();
-  }, []);
+  }, [products]);
 
   const {
     imgUrl,
@@ -119,14 +121,12 @@ const ProductDetails = () => {
                     </span>
                   </div>
 
-                  <p>
-                    (<span>{avgRating}</span> ratings)
-                  </p>
+                  <p>{/* (<span>{avgRating}</span> ratings) */} ratings</p>
                 </div>
 
                 <div className="d-flex align-items-center gap-5">
                   <span className="product__price">${price}</span>
-                  <span>Category : {category.toUpperCase()}</span>
+                  <span>Category : {category?.toUpperCase()}</span>
                 </div>
                 <p className="mt-3">{shortDesc}</p>
 

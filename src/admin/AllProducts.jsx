@@ -1,5 +1,7 @@
 import { deleteDoc, doc } from "firebase/firestore";
 import React from "react";
+import "../styles/allproduct.css";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Col, Container, Row } from "reactstrap";
 import { db } from "../../firebase.config";
@@ -16,12 +18,17 @@ const AllProducts = () => {
   return (
     <section>
       <Container>
+        <Link to="/dashboard/add-products">
+          <button className="buy__btn mb-5 d-flex align-items-center gap-2 ">
+            <i className="ri-add-line fs-4"></i> <span>Add New</span>
+          </button>
+        </Link>
         <Row>
           <Col lg="12">
             {loading ? (
               <h4 className="py-5 text-center fw-bold">Loading....</h4>
             ) : (
-              <table className="table">
+              <table className="table all">
                 <thead>
                   <tr>
                     <th>Image</th>

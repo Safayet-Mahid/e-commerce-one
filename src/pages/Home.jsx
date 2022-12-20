@@ -51,7 +51,7 @@ const Home = () => {
     setPopularProducts(filteredPopularProducts);
   }, [products]);
 
-  console.log(bestSalesProducts);
+  // console.log(bestSalesProducts);
   const year = new Date().getFullYear();
 
   return (

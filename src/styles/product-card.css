@@ -1,6 +1,10 @@
 
 .product__item{
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 450px;
 }
 
 .product__info a:hover{
@@ -30,6 +34,12 @@
     background-color: var(--primary-color);
     color: #fff;
     border-radius: 50px;
+}
+.product__img{
+height: 350px;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 @media screen and (max-width:992px) {

@@ -22,6 +22,7 @@
     cursor: pointer;
 }
 
+
 .admin__nav-top-right{
     display: flex;
     align-items: center;
@@ -32,6 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: white;
 }
 
 .admin__nav-top-right span i {
@@ -43,6 +45,16 @@
     font-size: 1.2rem;
     color: whitesmoke;
 }
+
+
+.admin__nav-wrapper-top{
+    position: relative;;
+}
+.admin__nav-wrapper-top .mobile__menu{
+    display: none;
+    color: #fff;
+}
+
 
 .admin__menu{
     width: 100%;
@@ -69,7 +81,55 @@
     border-radius: 5px;
 }
 
+
+.mobile__nav .cross__btn{
+    color: rgba(233, 42, 42, 0.87) !important;
+    border: 1px solid red !important;
+}
+
+ .mobile__nav{
+    /* display: none !important; */
+    position: absolute;
+    top: -18px;
+    right: -12px;
+    z-index: 999999;
+    background: var(--card-bg-02);
+    font-weight: 500;
+    padding: 30px 45px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+
+}
+
+.admin__mobile__menu-item {
+    list-style: none;
+    margin: 20px 0;
+    z-index: 99999999;
+}
+
 .active__admin-menu {
     background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+
+@media screen and (max-width:576px) {
+
+    .admin__menu{
+        display: none;
+    }
+    .admin__nav-wrapper-top .search__box{
+        display: none;
+    }
+    .admin__nav-top-right{
+        display: none;
+    }
+
+    .admin__nav-wrapper-top .mobile__menu{
+        display: block;
+    }
+    .admin__nav-wrapper-top .mobile__nav{
+        /* display: block; */
+    }
     
 }

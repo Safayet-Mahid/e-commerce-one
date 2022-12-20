@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
 
     toast.success("Product added successfully");
   };
-  console.log(product);
+  // console.log(product);
 
   return (
     <Col lg="3" md="4" className="mb-2">

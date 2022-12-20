@@ -1,0 +1,17 @@
+
+@media screen and (max-width:576px) {
+    
+    .all{
+        overflow-x: scroll;
+        display: block;
+    }
+    ::-webkit-scrollbar {
+        height: 4px;              /* height of horizontal scrollbar ← You're missing this */
+        width: 4px;               /* width of vertical scrollbar */
+        background-color: #fff;
+      }
+
+      ::-webkit-scrollbar-thumb{
+        background-color: var(--primary-color);
+      }
+}

@@ -21,7 +21,7 @@ const Users = () => {
             <h4 className="fw-bold">Users</h4>
           </Col>
           <Col lg="12" className="pt-5">
-            <table className="table">
+            <table className="table all">
               <thead>
                 <tr>
                   <th>Image</th>

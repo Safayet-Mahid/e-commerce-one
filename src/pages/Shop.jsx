@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CommonSection from "../components/UI/CommonSection";
 import Helmet from "../components/helmet/Helmet";
 import { Col, Row, Container } from "reactstrap";
@@ -7,11 +7,18 @@ import ProductList from "../components/UI/ProductList";
 
 import "../styles/shop.css";
 
-import products from "../assets/data/products";
+// import products from "../assets/data/products";
+
+import useGetData from "../custom-hooks/useGetData";
 
 const Shop = () => {
-  const [productsData, setProductsData] = useState(products);
+  const { data: products, loading } = useGetData("products");
 
+  const [productsData, setProductsData] = useState([]);
+
+  useEffect(() => {
+    setProductsData(products);
+  }, [products]);
   const handleFilter = (e) => {
     const filterValue = e.target.value;
 

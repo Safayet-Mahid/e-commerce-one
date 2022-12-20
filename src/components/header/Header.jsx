@@ -42,6 +42,7 @@ const Header = () => {
         document.body.scrollTop > 80 ||
         document.documentElement.scrollTop > 80
       ) {
+        // console.log("true");
         headerRef.current.classList.add("sticky__header");
       } else {
         headerRef.current.classList.remove("sticky__header");
@@ -58,7 +59,6 @@ const Header = () => {
   }, []);
 
   const toggleProfileActions = () => {
-    console.log("here");
     profileActionsRef.current.classList.toggle("show__profileActions");
   };
 
@@ -78,13 +78,15 @@ const Header = () => {
       <Container>
         <Row>
           <div className="nav__wrapper">
-            <div className="logo">
-              <img src={logo} alt="logo" />
+            <Link to="/home">
+              <div className="logo">
+                <img src={logo} alt="logo" />
 
-              <div>
-                <h1>Shopmart</h1>
+                <div>
+                  <h1>Shopmart</h1>
+                </div>
               </div>
-            </div>
+            </Link>
 
             <div className="navigation" ref={menuRef} onClick={menuToggle}>
               <ul className="menu">
@@ -130,14 +132,16 @@ const Header = () => {
                   onClick={toggleProfileActions}
                 >
                   {currentUser ? (
-                    <span onClick={logout} className="border-4">
-                      Logout
-                    </span>
+                    <>
+                      <span onClick={logout} className="border-4">
+                        Logout
+                      </span>
+                      <Link to="/dashboard">Dashboard</Link>
+                    </>
                   ) : (
                     <div className="d-flex flex-column align-items-center justify-content-center ">
                       <Link to="/signup">Signup</Link>
                       <Link to="/login">Login</Link>
-                      <Link to="/dashboard">Dashboard</Link>
                     </div>
                   )}
                 </div>

@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import Helmet from "../components/helmet/Helmet";
 
 import { Container, Row, Col, Form, FormGroup } from "reactstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import "../styles/login.css";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
-import { async } from "@firebase/util";
 import { auth } from "../../firebase.config";
 
 const Login = () => {
@@ -17,7 +16,9 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
+  console.log(location);
   const signIn = async (e) => {
     e.preventDefault();
 
@@ -31,8 +32,8 @@ const Login = () => {
       const user = userCredentials.user;
       toast.success("Successfully logged in");
       setLoading(false);
-      console.log(userCredentials.user);
-      navigate("/checkout");
+
+      location.state ? navigate(location.state?.pathname) : navigate("/home");
     } catch (err) {
       setLoading(false);
       toast.error(err.message);
