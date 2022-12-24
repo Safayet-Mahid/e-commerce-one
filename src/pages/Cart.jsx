@@ -47,26 +47,30 @@ const Cart = () => {
           </Col>
 
           <Col lg="3">
-            <div>
-              <h6 className="d-flex align-items-center justify-content-between">
-                Subtotal
-                <span className="fs-4 fw-bold">${totalAmount}</span>
-              </h6>
-            </div>
+            {cartItems.length > 0 && (
+              <>
+                <div>
+                  <h6 className="d-flex align-items-center justify-content-between">
+                    Subtotal
+                    <span className="fs-4 fw-bold">${totalAmount}</span>
+                  </h6>
+                </div>
 
-            <p className="fs-6 mt-2">
-              taxes and shipping will calculate in checkout
-            </p>
-            <div>
-              <Link to="/checkout">
-                <button className="buy__btn w-100 ">Checkout</button>
-              </Link>
-              <Link to="/shop">
-                <button className="buy__btn w-100 mt-3 mb-3">
-                  Continue Shopping
-                </button>
-              </Link>
-            </div>
+                <p className="fs-6 mt-2">
+                  taxes and shipping will calculate in checkout
+                </p>
+                <div>
+                  <Link to="/checkout">
+                    <button className="buy__btn w-100 ">Checkout</button>
+                  </Link>
+                  <Link to="/shop">
+                    <button className="buy__btn w-100 mt-3 mb-3">
+                      Continue Shopping
+                    </button>
+                  </Link>
+                </div>
+              </>
+            )}
           </Col>
         </Row>
       </Container>
